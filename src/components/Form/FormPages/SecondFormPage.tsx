@@ -1,19 +1,19 @@
-import { Button, CssBaseline, TextField, Grid, Box, Container, createTheme, ThemeProvider } from "../MUIStyles";
-import { formDisposition } from "../MUIStyles";
+import { Button, CssBaseline, TextField, Grid, Box, Container, createTheme, ThemeProvider } from "../material_imports";
+import { formPageProps } from "../../../types/formTypes";
 const theme = createTheme();
 
-const SecondFormPage = () => {
+const SecondFormPage = ({ page, changePage }: formPageProps) => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    changePage(page + 1);
   };
 
   return (
     <ThemeProvider theme={theme}>
-
       <Container component="main" maxWidth="xs">
         <CssBaseline />
-        <Box sx={formDisposition}>
-        <h1>Second Page</h1>
+        <Box className="form-disposition">
+          <h1>Second Page</h1>
           <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
@@ -22,32 +22,32 @@ const SecondFormPage = () => {
               <Grid item xs={12} sm={6}>
                 <TextField required fullWidth id="lastName" label="Last Name" name="lastName" autoComplete="family-name" />
               </Grid>
+
               <Grid item xs={12}>
                 <TextField required fullWidth id="email" label="Email Address" name="email" autoComplete="email" />
               </Grid>
               <Grid item xs={12}>
                 <TextField required fullWidth name="password" label="Password" type="password" id="password" autoComplete="new-password" />
               </Grid>
-
-              <Grid item xs={12}>
-                <TextField required fullWidth name="password" label="Password" type="password" id="password" autoComplete="new-password" />
-              </Grid>
             </Grid>
 
-
-            <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
-              Pagina siguiente (edita)
-            </Button>
-
+            <Grid container spacing={2}>
+              <Grid item xs={6} sm={6}>
+                <Button onClick={() => changePage(page - 1)} fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+                  Go back
+                </Button>
+              </Grid>
+              <Grid item xs={6} sm={6}>
+                <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+                  Next page
+                </Button>
+              </Grid>
+            </Grid>
           </Box>
-          
         </Box>
-
       </Container>
-
-
     </ThemeProvider>
   );
-}
+};
 
-export default SecondFormPage
+export default SecondFormPage;

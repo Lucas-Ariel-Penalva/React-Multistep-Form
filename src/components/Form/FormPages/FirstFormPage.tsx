@@ -1,16 +1,19 @@
 import { Button, CssBaseline, TextField, Grid, Box, Container, createTheme, ThemeProvider } from "../material_imports";
-import { formPageProps } from "../../../types/formTypes";
 const theme = createTheme();
 
 const FirstFormPage = ({ props }: any) => {
 
+  const err = props.errors;
+
+  const handleNextPage = () => props.setPage(props.page + 1);
+  
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
 
         <Box className="form-disposition">
-          <h1>First page</h1>
+
 
           <Box component="form" sx={{ mt: 3 }}>
             <Grid container spacing={2}>
@@ -77,11 +80,11 @@ const FirstFormPage = ({ props }: any) => {
 
               <Grid item xs={12}>
                 <TextField
-                  name="confirm-password"
-                  id="confirm-password"
+                  name="confirmPassword"
+                  id="confirmPassword"
                   label="Confirm Password"
                   type="password"
-                  value={props.values.confirmPassowrd}
+                  value={props.values.confirmPassword}
                   onChange={props.handleChange}
                   onBlur={props.handleBlur}
                   helperText={props.touched.confirmPassword && props.errors.confirmPassword}
@@ -92,7 +95,7 @@ const FirstFormPage = ({ props }: any) => {
               </Grid>
             </Grid>
 
-            <Button onClick={() => props.setPage(props.page + 1)} fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+            <Button disabled={props.values.firstName === ""|| err.firstName || err.lastName || err.email || err.password || err.confirmPassword ? true : false} onClick={handleNextPage} fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
               Next
             </Button>
           </Box>

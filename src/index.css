@@ -24,6 +24,8 @@ code {
   border-radius: 15px;
 }
 
+
+
 @media screen and (max-width: 600px) {
   .progress-bar {
     width: 90%;

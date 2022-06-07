@@ -6,6 +6,13 @@ const initialValues = {
   email: "",
   password: "",
   confirmPassword: "",
+  country: null,
+  gender:"female",
+  expertise:null,
+  experience:null,
+  workHours:"Full-time",
+  workModality:"Remote",
+  relocation:"No"
 };
 
 const validationSchema = () =>
@@ -14,9 +21,12 @@ const validationSchema = () =>
     lastName: Yup.string().min(3, "Three letters or longer").required("Write your last name."),
     email: Yup.string().email("Must be a valid email.").required("Write your email address."),
     password: Yup.string().min(6, "Your password must have at least six characters.").required("Write a password."),
-    passwordConfirmation: Yup.string().oneOf([Yup.ref("password"), null], "Passwords must match"),
+    confirmPassword: Yup.string()
+      .min(6, "Your password must have at least six characters.")
+      .required("Write a password.")
+      .oneOf([Yup.ref("password"), null], "Passwords must match"),
   });
 
-  const onSubmit = () => alert("");
 
-export { initialValues, validationSchema, onSubmit };
+
+export { initialValues, validationSchema };

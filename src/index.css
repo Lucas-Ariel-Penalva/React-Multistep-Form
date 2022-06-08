@@ -1,12 +1,44 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(to bottom, #1363df, #178dee, #5ab3f5, #9bd6f8, #dff6ff);
+  background-attachment: fixed;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.main-form-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+  position: relative;
+}
+
+.sign-up {
+  text-align: center;
+  font-weight: 900;
+  font-size: 44px;
+  color: rgb(243 244 246);
+  text-shadow: 2px 3px 0px #898999;
+}
+
+.step-reference {
+  margin-top: -23px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 25px;
+  color: rgb(233, 233, 233);
+}
+
+.form-container {
+  padding-bottom: 30px;
+  background-color: rgb(243 244 246);
+  border-radius: 5px;
 }
 
 .form-disposition {
@@ -16,18 +48,18 @@ code {
   align-items: center;
 }
 
-
 .progress-bar {
   margin: auto;
   width: 350px;
-  height: 10px !important;
+  height: 14px !important;
   border-radius: 15px;
 }
-
-
 
 @media screen and (max-width: 600px) {
   .progress-bar {
     width: 90%;
+  }
+  .sign-up {
+    font-size: 35px;
   }
 }

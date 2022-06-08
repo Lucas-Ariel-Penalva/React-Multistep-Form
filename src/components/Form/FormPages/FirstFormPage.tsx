@@ -2,19 +2,16 @@ import { Button, CssBaseline, TextField, Grid, Box, Container, createTheme, Them
 const theme = createTheme();
 
 const FirstFormPage = ({ props }: any) => {
-
   const err = props.errors;
 
   const handleNextPage = () => props.setPage(props.page + 1);
-  
+
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
 
         <Box className="form-disposition">
-
-
           <Box component="form" sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
@@ -95,7 +92,13 @@ const FirstFormPage = ({ props }: any) => {
               </Grid>
             </Grid>
 
-            <Button disabled={props.values.firstName === ""|| err.firstName || err.lastName || err.email || err.password || err.confirmPassword ? true : false} onClick={handleNextPage} fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+            <Button
+              disabled={props.values.firstName === "" || err.firstName || err.lastName || err.email || err.password || err.confirmPassword ? true : false}
+              onClick={handleNextPage}
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
               Next
             </Button>
           </Box>

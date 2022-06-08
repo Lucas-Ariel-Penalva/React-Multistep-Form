@@ -26,7 +26,6 @@ const SecondFormPage = ({ props }: any) => {
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box className="form-disposition">
-
           <Box component="form" sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12}>

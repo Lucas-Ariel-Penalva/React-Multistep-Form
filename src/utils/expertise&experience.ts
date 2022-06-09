@@ -8,7 +8,7 @@ const expertise: string[] = [
   "Human Resources",
   "Scrum Master",
   "Content Creator",
-  "Other"
+  "Other",
 ];
 
 const experience: string[] = ["Trainee", "Junior", "Semi-Senior", "Senior", "Leader"];

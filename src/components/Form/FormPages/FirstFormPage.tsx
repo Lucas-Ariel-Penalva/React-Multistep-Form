@@ -1,7 +1,8 @@
 import { Button, CssBaseline, TextField, Grid, Box, Container, createTheme, ThemeProvider } from "../material_imports";
+import { pageProps } from "../../../types/formTypes";
 const theme = createTheme();
 
-const FirstFormPage = ({ props }: any) => {
+const FirstFormPage = ({ props }: pageProps) => {
   const err = props.errors;
 
   const handleNextPage = () => props.setPage(props.page + 1);

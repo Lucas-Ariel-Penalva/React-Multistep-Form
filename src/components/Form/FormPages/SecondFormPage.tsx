@@ -16,9 +16,10 @@ import {
 } from "../material_imports";
 import { countries } from "../../../utils/countries";
 import { experience, expertise } from "../../../utils/expertise&experience";
+import { pageProps } from "../../../types/formTypes";
 const theme = createTheme();
 
-const SecondFormPage = ({ props }: any) => {
+const SecondFormPage = ({ props }: pageProps) => {
   const handleNextPage = () => props.setPage(props.page + 1);
 
   return (
@@ -98,7 +99,7 @@ const SecondFormPage = ({ props }: any) => {
 
             <Grid container spacing={2}>
               <Grid item xs={6} sm={6}>
-                <Button onClick={() => props.setPage(props.page - 1)} fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+                <Button onClick={() => props.setPage(props.page - 1)} fullWidth variant="outlined" sx={{ mt: 3, mb: 2 }}>
                   Back
                 </Button>
               </Grid>

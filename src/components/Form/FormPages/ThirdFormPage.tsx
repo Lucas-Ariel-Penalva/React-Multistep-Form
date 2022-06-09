@@ -14,13 +14,10 @@ import {
   RadioGroup,
   Radio,
 } from "../material_imports";
-import { useState } from "react";
-
+import { pageProps } from "../../../types/formTypes";
 const theme = createTheme();
 
-const ThirdFormPage = ({ props }: any) => {
-  const [checked, setChecked] = useState(false);
-
+const ThirdFormPage = ({ props }: pageProps) => {
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -64,7 +61,7 @@ const ThirdFormPage = ({ props }: any) => {
               <Grid item xs={12}>
                 <FormGroup>
                   <FormControlLabel
-                    control={<Checkbox checked={checked} onChange={(event: React.ChangeEvent<HTMLInputElement>) => setChecked(event.target.checked)} />}
+                    control={<Checkbox color="success" checked={props.checked} onChange={(event: React.ChangeEvent<HTMLInputElement>) => props.setChecked(event.target.checked)} />}
                     label="I accept the terms and conditions."
                   />
                 </FormGroup>
@@ -73,13 +70,13 @@ const ThirdFormPage = ({ props }: any) => {
 
             <Grid container spacing={2}>
               <Grid item xs={6} sm={6}>
-                <Button onClick={() => props.setPage(props.page - 1)} fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+                <Button onClick={() => props.setPage(props.page - 1)} fullWidth variant="outlined" sx={{ mt: 3, mb: 2 }}>
                   Go back
                 </Button>
               </Grid>
               <Grid item xs={6} sm={6}>
-                <Button disabled={checked ? false : true} type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
-                  Confirm data
+                <Button color="success" disabled={!props.checked || props.loading ? true : false} type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+                  {props.loading ? "Loading..." : "Finish"}
                 </Button>
               </Grid>
             </Grid>

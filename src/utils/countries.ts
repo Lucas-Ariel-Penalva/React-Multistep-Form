@@ -1,11 +1,5 @@
-//From material UI Autocomplete Docs https://mui.com/material-ui/react-autocomplete/
-
-interface CountryType {
-  code: string;
-  label: string;
-  phone: string;
-  suggested?: boolean;
-}
+//From material UI Autocomplete Docs https://mui.com/material-ui/react-autocomplete/m adapted for this project to be used with Formik.
+import { CountryType } from "../types/formTypes";
 
 const countries: readonly CountryType[] = [
   { code: "AD", label: "Andorra", phone: "376" },

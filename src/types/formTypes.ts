@@ -15,12 +15,12 @@ interface formStateInterface {
   password: string;
   confirmPassword: string;
   country: undefined | null | CountryType;
-  gender: string;
+  gender: string | null;
   expertise: string | null;
   experience: string | null;
-  workHours: string;
-  workModality: string;
-  relocation: string;
+  workHours: string | null;
+  workModality: string | null;
+  relocation: string | null;
 }
 
 interface formPropsInterface {

@@ -2,16 +2,6 @@ import Swal from "sweetalert2";
 import { formStateInterface } from "../types/formTypes";
 
 const SweetAlert = (val: formStateInterface) => {
-  if (!val.country || !val.expertise || !val.experience) {
-    return Swal.fire({
-      icon: "error",
-      title: "Something went wrong...",
-      text: "The data is invalid, please fill the form again",
-      confirmButtonColor: "red",
-      confirmButtonText: "Close",
-    });
-  }
-
   return Swal.fire({
     title: "Success!",
     icon: "success",

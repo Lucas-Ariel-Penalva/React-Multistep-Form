@@ -3,8 +3,6 @@ import { pageProps } from "../../../types/formTypes";
 const theme = createTheme();
 
 const FirstFormPage = ({ props }: pageProps) => {
-  const err = props.errors;
-
   const handleNextPage = () => props.setPage(props.page + 1);
 
   return (
@@ -94,7 +92,7 @@ const FirstFormPage = ({ props }: pageProps) => {
             </Grid>
 
             <Button
-              disabled={props.values.firstName === "" || err.firstName || err.lastName || err.email || err.password || err.confirmPassword ? true : false}
+              disabled={props.errors.firstName || props.errors.lastName || props.errors.email || props.errors.password || props.errors.confirmPassword ? true : false}
               onClick={handleNextPage}
               fullWidth
               variant="contained"

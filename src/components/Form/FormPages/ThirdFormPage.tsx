@@ -75,7 +75,14 @@ const ThirdFormPage = ({ props }: pageProps) => {
                 </Button>
               </Grid>
               <Grid item xs={6} sm={6}>
-                <Button color="success" disabled={!props.checked || props.loading ? true : false} type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+                <Button
+                  color="success"
+                  disabled={!props.checked || Object.keys(props.errors).length >= 1 ? true : false}
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  sx={{ mt: 3, mb: 2 }}
+                >
                   {props.loading ? "Loading..." : "Finish"}
                 </Button>
               </Grid>

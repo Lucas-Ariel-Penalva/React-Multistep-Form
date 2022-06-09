@@ -105,7 +105,7 @@ const SecondFormPage = ({ props }: pageProps) => {
               </Grid>
               <Grid item xs={6} sm={6}>
                 <Button
-                  disabled={props.values.expertise && props.values.experience && props.values.country ? false : true}
+                  disabled={props.errors.expertise || props.errors.experience || props.errors.country || props.errors.gender ? true : false}
                   onClick={handleNextPage}
                   fullWidth
                   variant="contained"

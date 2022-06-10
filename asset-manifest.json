@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/React-Multistep-Form/static/css/main.19abd3bf.css",
+    "main.js": "/React-Multistep-Form/static/js/main.d7e95135.js",
+    "index.html": "/React-Multistep-Form/index.html",
+    "main.19abd3bf.css.map": "/React-Multistep-Form/static/css/main.19abd3bf.css.map",
+    "main.d7e95135.js.map": "/React-Multistep-Form/static/js/main.d7e95135.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.19abd3bf.css",
+    "static/js/main.d7e95135.js"
+  ]
+}
